@@ -76,7 +76,7 @@ def build(reset=False):
         if db.scalars(select(User)).first():
             print('Seed already exists. Run python seed.py --reset for a clean synthetic dataset.');return
         install_rules(db)
-        m=new_institution(db,'Meridian Institute of Technology','SYN-MERIDIAN')
+        m=new_institution(db,'G L Bajaj Institute of Technology and Management','SYN-GLBAJAJ')
         b=new_institution(db,'Blue Ridge Engineering College','SYN-BLUERIDGE')
         c=new_institution(db,'Northstar Technology Institute','SYN-NORTHSTAR')
         for username,role,institution in [('admin','Admin',None),('officer','Scrutiny Officer',None),('senior','Senior Officer',None),('auditor','Auditor',None),('institution','Institution',m.id)]:
@@ -84,12 +84,12 @@ def build(reset=False):
         db.flush()
         hero=[]
         first=new_case(db,m)
-        new_doc(db,first,'meridian-application.pdf',form(m,'18'))
-        new_doc(db,first,'meridian-room-inventory.pdf',inventory(m,'15'))
-        new_doc(db,first,'meridian-fire-certificate.pdf',fire(m))
+        new_doc(db,first,'gl-bajaj-application.pdf',form(m,'18'))
+        new_doc(db,first,'gl-bajaj-room-inventory.pdf',inventory(m,'15'))
+        new_doc(db,first,'gl-bajaj-fire-certificate.pdf',fire(m))
         shared=pdf('Building Certificate',{'Issuer Name':'Synthetic Common Contractor','Certificate Number':'SYN-BUILD-REUSED-0007'})
-        new_doc(db,first,'meridian-building.pdf',shared)
-        new_doc(db,first,'meridian-room-photo.png',picture(),kind='Infrastructure Photo')
+        new_doc(db,first,'gl-bajaj-building.pdf',shared)
+        new_doc(db,first,'gl-bajaj-room-photo.png',picture(),kind='Infrastructure Photo')
         db.add(ApplicationSnapshot(application_id=first.id,year=2025,fields={'laboratories':'12','faculty_count':'58','intake':'480'}))
         hero.append(first)
         second=new_case(db,b)

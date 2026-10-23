@@ -26,7 +26,6 @@ html.dark table.clean th{background:#142941;color:#b3c7da}
 html.dark table.clean td{border-color:#2d465f}
 html.dark .tab{color:#b3c7da}
 html.dark .tab.active{color:#6ce1d5;border-color:#13a89e}
-html.dark .demo-banner{background:#302b21!important;color:#ffdfa5!important;border-color:#514630!important}
 html.dark .graph-box{background:#0e2035!important}
 html.dark .react-flow__node{color:#172B4D}
 html.dark .react-flow__controls button{background:#21364e;color:#edf7ff;border-color:#39526b}
@@ -34,3 +33,10 @@ html.dark .react-flow__minimap{background:#162a40}
 html.dark .pdf-doc{background:#fff}
 html.dark .text-teal{color:#5fe0d2!important}
 html.dark a:hover{opacity:.94}
+
+.workflow-step{height:40px;width:40px;flex-shrink:0;display:grid;place-items:center;border-radius:12px;background:rgba(19,168,158,.13);color:#087b75;font-size:18px;font-weight:800}
+html.dark .workflow-step{background:#124d50;color:#7ae9df}
+html.dark .border-emerald-200{border-color:#2f6556!important}
+html.dark .border-amber-200{border-color:#665132!important}
+html.dark .text-emerald-600,html.dark .text-emerald-700{color:#91edcb!important}
+html.dark .text-amber-600{color:#efcd7b!important}
