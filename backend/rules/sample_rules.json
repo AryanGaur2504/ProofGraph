@@ -1,0 +1,106 @@
+{
+  "label": "SAMPLE / DEMO RULE, replace from the AICTE Approval Process Handbook",
+  "version": 1,
+  "effective_from": "2026-01-01",
+  "categories": {
+    "Extension of Approval": [
+      "Application Form",
+      "Room Inventory",
+      "Fire Safety Certificate"
+    ],
+    "Change of Name": [
+      "Application Form",
+      "Name Change Evidence"
+    ],
+    "Increase in Intake": [
+      "Application Form",
+      "Room Inventory",
+      "Capacity Evidence"
+    ]
+  },
+  "rules": [
+    {
+      "id": "SAMPLE-DOC-001",
+      "category": "required",
+      "description": "Check for required document types in the demo application category",
+      "severity": "Medium",
+      "specification": {
+        "op": "required_documents"
+      },
+      "source_citation": "SAMPLE / DEMO RULE, not a statement of AICTE requirements"
+    },
+    {
+      "id": "SAMPLE-EXP-001",
+      "category": "expiry",
+      "description": "Review sample certificates with a past expiry date",
+      "severity": "High",
+      "specification": {
+        "op": "expired_documents"
+      },
+      "source_citation": "SAMPLE / DEMO RULE; certificate acceptance criteria must be confirmed"
+    },
+    {
+      "id": "SAMPLE-LAB-001",
+      "category": "cross_document",
+      "description": "Compare laboratory count declared on form against supporting inventory",
+      "severity": "High",
+      "specification": {
+        "op": "compare_fields",
+        "field": "laboratories"
+      },
+      "source_citation": "SAMPLE / DEMO RULE, not an AICTE minimum laboratory requirement"
+    },
+    {
+      "id": "SAMPLE-HIST-001",
+      "category": "history",
+      "description": "Flag unexplained changes from the previous institution snapshot",
+      "severity": "Medium",
+      "specification": {
+        "op": "historical_diff",
+        "evidence_required": "Supporting sanctioned expansion/updated facility records (demo guidance)"
+      },
+      "source_citation": "SAMPLE / DEMO RULE; a change is not itself a violation"
+    },
+    {
+      "id": "SAMPLE-DUP-001",
+      "category": "advisory",
+      "description": "Review duplicated documents used by unrelated institutions",
+      "severity": "Medium",
+      "specification": {
+        "op": "duplicate_cross_institution"
+      },
+      "source_citation": "SAMPLE / DEMO RULE; similarity is not proof of forgery"
+    },
+    {
+      "id": "SAMPLE-XDOC-002",
+      "category": "cross_document",
+      "description": "Compare common identifiers, names, addresses, signatories and counts across submitted evidence",
+      "severity": "Medium",
+      "specification": {
+        "op": "compare_other_fields",
+        "fields": [
+          "faculty_count",
+          "intake",
+          "land_area",
+          "institution_name",
+          "address",
+          "signatory",
+          "registration_id",
+          "latitude",
+          "longitude"
+        ]
+      },
+      "source_citation": "SAMPLE / DEMO RULE; discrepancy implies further review, not fraud"
+    },
+    {
+      "id": "SAMPLE-AREA-001",
+      "category": "arithmetic",
+      "description": "Demo-only reconciliation of reported total area and its block components",
+      "severity": "Medium",
+      "specification": {
+        "op": "area_arithmetic"
+      },
+      "source_citation": "SAMPLE / DEMO arithmetic consistency rule, no regulatory minimum implied"
+    }
+  ]
+}

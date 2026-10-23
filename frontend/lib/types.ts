@@ -1,0 +1,10 @@
+export type Role = 'Institution'|'Scrutiny Officer'|'Senior Officer'|'Admin'|'Auditor'
+export type User = {id:number;username:string;role:Role;institution_id:number|null}
+export type CaseSummary = {id:number;institution:string;institution_code:string;category:string;year:number;state:string;findings_count:number;priority:Priority;unexplained_count:number}
+export type Priority = {label:'High'|'Medium'|'Low';points:number;formula:string;reasons:{finding_id:number;title:string;weight:number;severity:string}[]}
+export type Evidence = {document_id?:number|null;document_name?:string;field_id?:number;field?:string;value?:string;page?:number|null;bbox?:number[]}
+export type Finding = {id:number;title:string;category:string;severity:string;reason:string;next_action:string;rule_id:string;rule_version:number;source_a:Evidence;source_b:Evidence;official_status:string;consistency_status:string;ai_status:string;manual_status:string}
+export type ExtractedField = {id:number;key:string;value:string;page:number;bbox:number[];confidence:number;corrected:boolean}
+export type Doc = {id:number;name:string;kind:string;mime:string;sha256:string;perceptual_hash?:string;expiry:string|null;processing_status:string;metadata:Record<string,unknown>;fields:ExtractedField[]}
+export type CaseDetail = {id:number;institution:string;institution_id:number;institution_code:string;address:string;category:string;year:number;state:string;submitted:boolean;synthetic:boolean;priority:Priority;checklist:{type:string;present:boolean;expired:boolean}[];documents:Doc[];findings:Finding[];changes:{key:string;old_value:string;new_value:string;explained:boolean;evidence_required:string;explanation:string}[];snapshots:{year:number;fields:Record<string,string>}[];verifications:{id:number;source:string;status:string;simulated:boolean;detail:string;document_id:number|null}[];review_actions:{id:number;finding_id:number;action:string;reason:string;user_id:number;at:string}[]}
+export type Graph = {nodes:{id:string;type:string;label:string;entity_id:number|null;data:Record<string,any>}[];edges:{id:string;source:string;target:string;type:string}[]}

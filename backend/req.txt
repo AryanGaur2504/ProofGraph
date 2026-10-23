@@ -1,0 +1,2 @@
+# Short alias usable after cd backend.
+-r requirements.txt

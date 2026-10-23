@@ -1,0 +1,15 @@
+# ProofGraph is a synthetic public DEMO, not a persistent production application.
+services:
+  - type: web
+    name: proofgraph-demo
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: PROOFGRAPH_JWT_SECRET
+        generateValue: true
+      - key: PROOFGRAPH_LLM_ENABLED
+        value: 'false'

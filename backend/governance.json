@@ -1,0 +1,6 @@
+{
+ "classification": "SYNTHETIC DEMONSTRATION DATA ONLY",
+ "retention_policy": {"suggested_days": 365,"auto_purge_enabled":false,"reason":"No deletion without approved official retention schedule and legal review."},
+ "privacy": {"production_requires_encryption_key":true,"demo_pii":"fictional and non-identifying","role_masking":"officer/auditor read requires authorization","access_logging":"business actions audited; all low-level file reads not individually hashed"},
+ "external_authorities":{"configured":false,"official_verification":"PENDING or MANUAL_REQUIRED only"}
+}

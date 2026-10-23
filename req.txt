@@ -1,0 +1,2 @@
+# Short alias for users who run pip install -r req.txt from the project root.
+-r backend/requirements.txt

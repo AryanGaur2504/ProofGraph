@@ -1,0 +1,14 @@
+**/node_modules
+**/.next
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/*.pyc
+**/.env
+**/.env.local
+**/proofgraph.db
+**/evaluation_labels.json
+backend/storage/*
+.git
+*.zip
+ProofGraph-source.zip

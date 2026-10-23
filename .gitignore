@@ -1,0 +1,17 @@
+node_modules/
+.next/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+.env.local
+*.log
+.DS_Store
+backend/storage/*.pdf
+backend/storage/*.png
+backend/storage/*.jpg
+backend/proofgraph.db
+backend/evaluation_labels.json
+
+# Local Python environment created by setup_windows.bat
+.venv/

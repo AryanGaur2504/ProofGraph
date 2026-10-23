@@ -1,0 +1,4 @@
+import React from 'react'
+import {cn} from '@/lib/utils'
+type Props=React.ButtonHTMLAttributes<HTMLButtonElement>&{variant?:'primary'|'outline'|'ghost'|'danger'|'soft';size?:'sm'|'md'}
+export function Button({className,variant='primary',size='md',...props}:Props){return <button {...props} className={cn('inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal',size==='sm'?'px-3 py-2 text-xs':'px-4 py-2.5 text-sm',variant==='primary'?'bg-teal text-white hover:bg-[#0d8f87]':variant==='outline'?'border border-slate-200 bg-white text-ink hover:border-teal/50 hover:bg-teal/5':variant==='danger'?'border border-red-200 bg-red-50 text-red-700 hover:bg-red-100':variant==='soft'?'bg-[#e6f6f4] text-[#087b75] hover:bg-[#d1eee9]':'bg-transparent text-slate-600 hover:bg-slate-100',className)} />}

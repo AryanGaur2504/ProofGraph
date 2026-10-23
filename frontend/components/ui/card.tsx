@@ -1,0 +1,6 @@
+import {ReactNode} from 'react'
+import {cn} from '@/lib/utils'
+export function Card({children,className}:{children:ReactNode;className?:string}){return <section className={cn('rounded-2xl border border-slate-200/80 bg-white p-5 shadow-panel',className)}>{children}</section>}
+export function SectionHeading({title,subtitle,action}:{title:string;subtitle?:string;action?:ReactNode}){return <div className="flex flex-wrap items-center justify-between gap-3 mb-5"><div><h2 className="font-bold tracking-tight text-lg text-navy">{title}</h2>{subtitle&&<p className="mt-1 text-xs text-slate-500">{subtitle}</p>}</div>{action}</div>}
+export function Status({children,tone='neutral'}:{children:ReactNode;tone?:'neutral'|'green'|'red'|'amber'|'teal'}){return <span className={cn('inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-semibold',tone==='green'?'bg-emerald-50 text-emerald-700':tone==='red'?'bg-rose-50 text-rose-700':tone==='amber'?'bg-amber-50 text-amber-800':tone==='teal'?'bg-teal/10 text-teal':'bg-slate-100 text-slate-600')}>{children}</span>}
+export function PriorityPill({level}:{level:string}){return <Status tone={level==='High'?'red':level==='Medium'?'amber':'green'}><span className="inline-block h-1.5 w-1.5 rounded-full bg-current"/>{level} attention</Status>}
