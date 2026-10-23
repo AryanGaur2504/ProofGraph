@@ -147,3 +147,7 @@ Protected API reads require JWTs; RBAC ensures an institution account cannot acc
 - **Next.js compilation and browser execution could not be confirmed** because the environment lacked npm registry DNS/connectivity. Run `npm install && npm run build` in a network-capable environment before presenting the frontend. Do not mistake successful static syntax parsing for a complete build test.
 
 **No AICTE endorsement is implied.** No official government logo or seal is used.
+
+## Updated, simplified UI
+
+Use `/check` (sidebar **Upload & check**) for creating/opening cases, multi-document upload, automatic analysis, revalidation, findings and draft reports in one place. The landing dashboard now shows a four-step workflow, and advanced tools are collapsed into their own sidebar section. A persistent light/dark toggle is available in the top bar. See [UI_GUIDE.md](UI_GUIDE.md).
