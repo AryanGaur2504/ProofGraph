@@ -92,7 +92,7 @@ def test_report_pdf_and_approval(client,auth):
     with fitz.open(stream=raw.content,filetype='pdf') as pdf:
         txt=' '.join(page.get_text() for page in pdf)
         assert 'SYNTHETIC DEMONSTRATION DATA' in txt
-        assert 'Laboratories conflict' in txt
+        assert 'Laboratory counts do not match' in txt
     assert client.post(f"/api/reports/{report['report_id']}/approve",headers=h).status_code==403
     assert client.post(f"/api/reports/{report['report_id']}/approve",headers=auth('senior')).json()['approved']
 
